@@ -1,0 +1,195 @@
+[
+    {
+        "title": "Issue with login",
+        "description": "Unable to log in to the website",
+        "status": "open",
+        "created on": "2019-01-01",
+        "replies": [
+            {
+                "author": "Testing user1",
+                "message": "Have you tried resetting your password?",
+                "created on": "2019-01-01",
+                "role": "STAFF"
+            }
+        ]
+    },
+    {
+        "title": "Payment error",
+        "description": "Failed to process the payment",
+        "status": "feedback",
+        "created on": "2019-02-10",
+        "replies": [
+            {
+                "author": "Testing user2",
+                "message": "I checked my card details, and they are correct.",
+                "created on": "2019-02-10",
+                "role": "USER"
+            },
+            {
+                "author": "Testing user3",
+                "message": "Yes, we have it in various colors.",
+                "created on": "2019-03-22",
+                "role": "STAFF"
+            }
+        ]
+    },
+    {
+        "title": "Product inquiry",
+        "description": "Is the product available in other colors?",
+        "status": "open",
+        "created on": "2019-03-22",
+        "replies": []
+    },
+    {
+        "title": "Bug report",
+        "description": "The application crashes on startup",
+        "status": "open",
+        "created on": "2019-04-05",
+        "replies": [
+            {
+                "author": "Testing user4",
+                "message": "I tried reinstalling, but it didn't help.",
+                "created on": "2019-04-05",
+                "role": "USER"
+            }
+        ]
+    },
+    {
+        "title": "Feedback",
+        "description": "I love the new website design!",
+        "status": "open",
+        "created on": "2019-05-15",
+        "replies": []
+    },
+    {
+        "title": "Shipping delay",
+        "description": "My order hasn't shipped yet",
+        "status": "open",
+        "created on": "2019-06-02",
+        "replies": []
+    },
+    {
+        "title": "Compatibility issue",
+        "description": "The software is not compatible with macOS",
+        "status": "open",
+        "created on": "2019-07-17",
+        "replies": [
+            {
+                "author": "Testing user7",
+                "message": "We are aware of the issue and will release a fix soon.",
+                "created on": "2019-07-17",
+                "role": "STAFF"
+            },
+            {
+                "author": "Testing user5",
+                "message": "Thank you for the positive feedback!",
+                "created on": "2019-05-15",
+                "role": "STAFF"
+            },
+            {
+                "author": "Testing user6",
+                "message": "I apologize for the inconvenience. We're working on it.",
+                "created on": "2019-06-02",
+                "role": "STAFF"
+            }
+        ]
+    },
+    {
+        "title": "Refund request",
+        "description": "I want to return the product and get a refund",
+        "status": "feedback",
+        "created on": "2019-08-28",
+        "replies": [
+            {
+                "author": "Testing user8",
+                "message": "Please provide your order number, and we'll initiate the refund process.",
+                "created on": "2019-08-28",
+                "role": "STAFF"
+            }
+        ]
+    },
+    {
+        "title": "Feature request",
+        "description": "Add a dark mode option to the app",
+        "status": "resolved",
+        "created on": "2019-09-14",
+        "replies": [
+            {
+                "author": "Testing user9",
+                "message": "We'll consider adding that in a future update.",
+                "created on": "2019-09-14",
+                "role": "STAFF"
+            }
+        ]
+    },
+    {
+        "title": "Login trouble",
+        "description": "Forgot my password, and the reset link is not working",
+        "status": "open",
+        "created on": "2019-10-03",
+        "replies": [
+            {
+                "author": "Testing user10",
+                "message": "We'll send you a new reset link right away.",
+                "created on": "2019-10-03",
+                "role": "STAFF"
+            }
+        ]
+    },
+    {
+        "title": "Missing item in the order",
+        "description": "One item from my order is missing",
+        "status": "open",
+        "created on": "2019-11-12",
+        "replies": [
+            {
+                "author": "Testing user11",
+                "message": "I apologize for the oversight. We'll ship the missing item immediately.",
+                "created on": "2019-11-12",
+                "role": "STAFF"
+            }
+        ]
+    },
+    {
+        "title": "App crash on Android",
+        "description": "The app crashes on Android devices",
+        "status": "open",
+        "created on": "2019-12-25",
+        "replies": [
+            {
+                "author": "Testing user12",
+                "message": "We are investigating the issue and will release a fix soon.",
+                "created on": "2019-12-25",
+                "role": "STAFF"
+            }
+        ]
+    },
+    {
+        "title": "Product warranty",
+        "description": "Is there a warranty for the product?",
+        "status": "open",
+        "created on": "2020-01-10",
+        "replies": [
+            {
+                "author": "Testing user13",
+                "message": "Yes, the product comes with a 1-year warranty.",
+                "created on": "2020-01-10",
+                "role": "STAFF"
+            }
+        ]
+    },
+    {
+        "title": "Order status",
+        "description": "I haven't received any updates about my order",
+        "status": "resolved",
+        "created on": "2020-02-22",
+        "replies": [
+            {
+                "author": "Testing user14",
+                "message": "I'll check the status and update you as soon as possible.",
+                "created on": "2020-02-22",
+                "role": "STAFF"
+            }
+        ]
+    }
+]
