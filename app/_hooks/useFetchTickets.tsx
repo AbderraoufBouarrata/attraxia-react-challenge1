@@ -50,9 +50,8 @@ export default function TicketsProvider({ children }: { children: React.ReactNod
         const sortedData = [...tickets];
 
         sortedData.sort((a, b) => {
-            // @ts-ignore
             const dateA = new Date(a["created on"]);
-            // @ts-ignore
+
             const dateB = new Date(b["created on"]);
 
             if (sortingDirection["created on"]) {
