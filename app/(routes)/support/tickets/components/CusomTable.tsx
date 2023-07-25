@@ -92,7 +92,7 @@ export default function CustomTable() {
             transition: "all .3s ease-in-out",
         },
     };
-    if (!tickets) return <></>;
+    if (!tickets) return <TicketsNotFound />;
 
     return (
         <TableContainer sx={styles.table} component={Paper}>
@@ -103,7 +103,6 @@ export default function CustomTable() {
                             sx={styles.headers}
                             align="left"
                             onClick={() => {
-                                // @ts-ignore
                                 sortTickets("title");
                             }}>
                             <Stack sx={styles.alignCenterY} direction="row">
@@ -114,7 +113,6 @@ export default function CustomTable() {
                             sx={styles.headers}
                             align="left"
                             onClick={() => {
-                                // @ts-ignore
                                 sortTickets("status");
                             }}>
                             <Stack sx={styles.alignCenterY} direction="row">
@@ -123,7 +121,6 @@ export default function CustomTable() {
                         </StyledTableCell>
                         <StyledTableCell
                             onClick={() => {
-                                // @ts-ignore
                                 sortTickets("created on");
                             }}
                             sx={styles.headers}
@@ -136,7 +133,6 @@ export default function CustomTable() {
                             sx={styles.headers}
                             align="left"
                             onClick={() => {
-                                // @ts-ignore
                                 sortTickets("replies");
                             }}>
                             <Stack sx={styles.alignCenterY} direction="row">

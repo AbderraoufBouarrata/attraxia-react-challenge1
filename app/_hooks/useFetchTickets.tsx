@@ -6,27 +6,27 @@ import { Tickets } from "../_types/tickets";
 
 type initialStateType = {
     tickets: Tickets;
-
     searchForTicket: (value: string) => void;
     sortTickets: (sortBy: string) => void;
     sortingDirection: any;
     searchForTicketByStatus: (value: string) => void;
+    handlePageChange: (pageNumber: number) => void;
 };
 
 const initialState: initialStateType = {
     tickets: null,
-
     searchForTicket: () => {},
     sortTickets: () => {},
     sortingDirection: null,
     searchForTicketByStatus: () => {},
+    handlePageChange: () => {},
 };
 
 const Context = React.createContext<initialStateType>(initialState);
 
 export default function TicketsProvider({ children }: { children: React.ReactNode }) {
     //@ts-ignore
-    const [tickets, setTickets] = React.useState<Tickets>(mockData);
+    const [tickets, setTickets] = React.useState<typeof mockData>(mockData);
     //@ts-ignore
 
     const sort = {
@@ -40,10 +40,10 @@ export default function TicketsProvider({ children }: { children: React.ReactNod
 
     function refreshState() {
         // some logic to fetch tickets from the server
-        // @ts-ignore
+
         setTickets(mockData);
     }
-    // @ts-ignore
+
     function sortTicketsByDate() {
         if (!tickets) return;
         refreshState();
@@ -62,7 +62,6 @@ export default function TicketsProvider({ children }: { children: React.ReactNod
             }
         });
 
-        // @ts-ignore
         setTickets(sortedData);
     }
 
@@ -121,31 +120,37 @@ export default function TicketsProvider({ children }: { children: React.ReactNod
         if (!tickets) return;
 
         const filtered = mockData.filter((ticket) => ticket.title.toLowerCase().includes(value.toLowerCase()));
-        // @ts-ignore
+
         setTickets(filtered);
     }
 
     function searchForTicketByStatus(value: string) {
         if (!tickets) return;
         if (value === "ALL") {
-            // @ts-ignore
             setTickets(mockData);
             return;
         }
         const filtered = mockData.filter((ticket) => ticket.status.toLowerCase().includes(value.toLowerCase()));
-        // @ts-ignore
+
         setTickets(filtered);
     }
     function handlePageChange(pageNumber: number) {
-        // @ts-ignore
         setTickets(mockData.slice((pageNumber - 1) * 5, pageNumber * 5));
     }
 
     React.useEffect(() => {
-        setContextValue((prev) => ({ ...prev, tickets, sortingDirection, sortTickets, searchForTicket, searchForTicketByStatus, handlePageChange }));
+        setContextValue((prev: any) => ({
+            ...prev,
+            tickets,
+            sortingDirection,
+            sortTickets,
+            searchForTicket,
+            searchForTicketByStatus,
+            handlePageChange,
+        }));
     }, [tickets]);
 
-    const [contextValue, setContextValue] = React.useState({
+    const [contextValue, setContextValue] = React.useState<any>({
         tickets,
         searchForTicket,
         sortTickets,
