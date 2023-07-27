@@ -11,6 +11,7 @@ const CssTextField = styled(TextField)({
     "& .MuiOutlinedInput-root": {
         boxSizing: "border-box",
         backgroundColor: grey[200],
+        border: `2px solid ${grey[200]}`,
 
         "& fieldset": {
             border: `none`,
@@ -20,9 +21,9 @@ const CssTextField = styled(TextField)({
             borderColor: blue[500],
             transition: "border-color 0.3s",
         },
-        "&.Mui-focused fieldset": {
+        "&.Mui-focused.MuiOutlinedInput-root": {
             border: `2px solid ${blue[500]}`,
-            backgroundColor: "transparent",
+            backgroundColor: "transparent", // Apply the desired focus state background color here
         },
     },
 });
