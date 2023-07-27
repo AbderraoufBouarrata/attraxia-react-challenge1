@@ -10,7 +10,6 @@ type initialStateType = {
     sortTickets: (sortBy: string) => void;
     sortingDirection: any;
     searchForTicketByStatus: (value: string) => void;
-    handlePageChange: (pageNumber: number) => void;
 };
 
 const initialState: initialStateType = {
@@ -19,7 +18,6 @@ const initialState: initialStateType = {
     sortTickets: () => {},
     sortingDirection: null,
     searchForTicketByStatus: () => {},
-    handlePageChange: () => {},
 };
 
 const Context = React.createContext<initialStateType>(initialState);
@@ -133,9 +131,6 @@ export default function TicketsProvider({ children }: { children: React.ReactNod
 
         setTickets(filtered);
     }
-    function handlePageChange(pageNumber: number) {
-        setTickets(mockData.slice((pageNumber - 1) * 5, pageNumber * 5));
-    }
 
     React.useEffect(() => {
         setContextValue((prev: any) => ({
@@ -145,7 +140,6 @@ export default function TicketsProvider({ children }: { children: React.ReactNod
             sortTickets,
             searchForTicket,
             searchForTicketByStatus,
-            handlePageChange,
         }));
     }, [tickets]);
 
@@ -155,7 +149,6 @@ export default function TicketsProvider({ children }: { children: React.ReactNod
         sortTickets,
         sortingDirection,
         searchForTicketByStatus,
-        handlePageChange,
     });
     return <Context.Provider value={contextValue}>{children}</Context.Provider>;
 }

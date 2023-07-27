@@ -175,7 +175,7 @@ export default function CustomTable() {
                     ))}
                 </TableBody>
             </Table>
-            <CustomTablePagination visibleTickets={visibleTickets} page={page} setPage={setPage} />
+            <CustomTablePagination page={page} setPage={setPage} itemsPerPage={itemsPerPage} />
         </TableContainer>
     );
 }

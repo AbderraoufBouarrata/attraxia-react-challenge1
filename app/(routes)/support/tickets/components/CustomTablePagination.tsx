@@ -4,9 +4,9 @@ import React from "react";
 import TicketsNotFound from "./TicketsNotFound";
 
 type Props = {
-    visibleTickets: any;
     page: number;
     setPage: any;
+    itemsPerPage: number;
 };
 
 const styles = {
@@ -39,12 +39,13 @@ const styles = {
 };
 
 export default function CustomTablePagination(props: Props) {
-    const { visibleTickets, page, setPage } = props;
-    const { tickets, handlePageChange } = useFetchTickets();
+    const { page, setPage, itemsPerPage } = props;
+    const { tickets } = useFetchTickets();
     if (!tickets) return <TicketsNotFound />;
 
-    const PER_PAGE = 5;
-    const [count, setCount] = React.useState(Math.ceil(tickets.length / PER_PAGE));
+    const PER_PAGE = itemsPerPage;
+
+    const count = Math.ceil(tickets.length / PER_PAGE);
 
     function handleChangePage(event: React.ChangeEvent<unknown>, value: number) {
         setPage(value); // Update the page state to the selected page

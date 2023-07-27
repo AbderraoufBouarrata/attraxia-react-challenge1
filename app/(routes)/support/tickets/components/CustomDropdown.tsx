@@ -39,7 +39,6 @@ export default function CustomDropdown() {
     };
 
     if (!tickets) return <TicketsNotFound />;
-    const ticketsLength = [tickets.length];
 
     const getTotalStatusCount = React.useCallback((data: Ticket[]): { [status: string]: number } => {
         const statusCounts: { [status: string]: number } = {};
@@ -57,7 +56,7 @@ export default function CustomDropdown() {
     }, []);
 
     React.useEffect(() => {
-        setAllStatusCount(ticketsLength.concat(Object.values(getTotalStatusCount(tickets))));
+        setAllStatusCount([tickets.length].concat(Object.values(getTotalStatusCount(tickets))));
     }, []);
 
     return (
