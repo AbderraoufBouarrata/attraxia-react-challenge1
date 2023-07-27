@@ -13,6 +13,7 @@ import Image from "next/image";
 import TicketsNotFound from "./TicketsNotFound";
 import React from "react";
 import arrow from "@/app/_assets/icons/arrow.svg";
+import CustomTablePagination from "./CustomTablePagination";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -36,6 +37,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 export default function CustomTable() {
     const { tickets, sortTickets, sortingDirection } = useFetchTickets();
+    const itemsPerPage = 5; // Number of items to display per page
+    const [page, setPage] = React.useState(1);
 
     const styles = {
         table: {
@@ -93,7 +96,8 @@ export default function CustomTable() {
         },
     };
     if (!tickets) return <TicketsNotFound />;
-
+    const startIndex = (page - 1) * itemsPerPage;
+    const visibleTickets = tickets.slice(startIndex, startIndex + itemsPerPage);
     return (
         <TableContainer sx={styles.table} component={Paper}>
             <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -142,7 +146,7 @@ export default function CustomTable() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {tickets.map((ticket, index) => (
+                    {visibleTickets.map((ticket, index) => (
                         <StyledTableRow key={index}>
                             <StyledTableCell component="th" scope="row">
                                 <Typography sx={styles.title}>{ticket.title}</Typography>
@@ -171,6 +175,7 @@ export default function CustomTable() {
                     ))}
                 </TableBody>
             </Table>
+            <CustomTablePagination visibleTickets={visibleTickets} page={page} setPage={setPage} />
         </TableContainer>
     );
 }

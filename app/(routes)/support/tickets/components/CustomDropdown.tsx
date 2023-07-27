@@ -58,7 +58,7 @@ export default function CustomDropdown() {
 
     React.useEffect(() => {
         setAllStatusCount(ticketsLength.concat(Object.values(getTotalStatusCount(tickets))));
-    }, [tickets]);
+    }, []);
 
     return (
         <div>

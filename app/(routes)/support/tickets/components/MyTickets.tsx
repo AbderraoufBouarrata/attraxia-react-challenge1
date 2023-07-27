@@ -15,7 +15,7 @@ import CustomTablePagination from "./CustomTablePagination";
 
 const styles = {
     mainContainer: {
-        my: "4rem",
+        mt: "4rem",
         width: "70%",
         minHeight: "700px",
         display: "flex",
@@ -88,7 +88,6 @@ export default function MyTickets() {
                     </Grid>
                 </Grid>
             </Box>
-            <CustomTablePagination />
         </>
     );
 }
